@@ -6,7 +6,9 @@
 // Github : https://github.com/noahjzc/SmartSqlSample
 //*******************************-->
 <SmartSqlMapConfig xmlns="http://SmartSql.net/schemas/SmartSqlMapConfig.xsd">
+  <!-- 允许使用缓存（以后章节细讲） -->
   <Settings IsCacheEnabled="true" />
+  <!-- 属性、特性配置节点，这里只配置一个连接字符串 -->
   <Properties>
     <Property Name="ConnectionString" Value="Data Source=localhost;database=SmartSqlSample;uid=sa;pwd=123456" />
   </Properties>
