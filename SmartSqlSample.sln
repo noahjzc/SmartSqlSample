@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapter-1", "chapter-1", "{9542CD5B-A95D-480B-8895-38424573589D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapter-2", "chapter-2", "{64B48805-8BD6-42F2-9F0B-689223A8F004}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapter-3", "chapter-3", "{53C6FA98-2480-46CC-8082-411978BB27AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapter-4", "chapter-4", "{E23E37C4-F40F-4080-ACE5-D9FD4292BCE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapter-5", "chapter-5", "{66A066EE-E8F4-4E97-86C8-57406BE740EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapter-6", "chapter-6", "{F3747F5A-D216-4028-89FA-439877FE99B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapter-7", "chapter-7", "{E9C8F60A-FF65-45AB-8E10-FEAEE690DB13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapter-8", "chapter-8", "{5153BFD8-BFBA-4F58-9989-A32306D0C743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSqlSampleChapterOne", "chapter-1\source\SmartSqlSampleChapterOne\SmartSqlSampleChapterOne.csproj", "{394DAA36-47E1-408B-A332-DF6CF8618FFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{394DAA36-47E1-408B-A332-DF6CF8618FFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{394DAA36-47E1-408B-A332-DF6CF8618FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{394DAA36-47E1-408B-A332-DF6CF8618FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{394DAA36-47E1-408B-A332-DF6CF8618FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{394DAA36-47E1-408B-A332-DF6CF8618FFA} = {9542CD5B-A95D-480B-8895-38424573589D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68EC28E1-6CEA-4398-BA10-5AA723E1C6A9}
+	EndGlobalSection
+EndGlobal

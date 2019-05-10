@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+//*******************************
+// Create By Noah.Ji
+// Date 2019-05-10
+// Github : https://github.com/noahjzc/SmartSqlSample
+//*******************************-->
+<SmartSqlMapConfig xmlns="http://SmartSql.net/schemas/SmartSqlMapConfig.xsd">
+  <Settings IsCacheEnabled="true" />
+  <Properties>
+    <Property Name="ConnectionString" Value="Data Source=localhost;database=SmartSqlSample;uid=sa;pwd=123456" />
+  </Properties>
+  <Database>
+    <DbProvider Name="SqlServer" />
+    <Write Name="cms" ConnectionString="${ConnectionString}" />
+  </Database>
+  <SmartSqlMaps>
+    <SmartSqlMap Path="Maps" Type="Directory"></SmartSqlMap>
+  </SmartSqlMaps>
+</SmartSqlMapConfig>

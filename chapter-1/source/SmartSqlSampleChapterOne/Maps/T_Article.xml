@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+//*******************************
+// Create By Ahoo Wang
+// Date 2019-05-06 11:19
+// Code Generate By SmartCode
+// Code Generate Github : https://github.com/Ahoo-Wang/SmartCode
+//*******************************-->
+
+<SmartSqlMap Scope="Article" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+  <Statements>
+    <Statement Id="QueryParams">
+      <Where>
+        <IsGreaterEqual Prepend="And" Property="Id" CompareValue="0">
+          T.Id = @Id
+        </IsGreaterEqual>
+        <IsNotEmpty Prepend="And" Property="Title">
+          T.Title Like '%'+@Title+'%'
+        </IsNotEmpty>
+      </Where>
+    </Statement>
+
+    <!--新增-->
+    <Statement Id="Insert">
+      INSERT INTO T_Article
+      (Title
+      ,Content
+      ,Author
+      ,Status
+      ,CreateTime
+      ,ModifiedTime
+      )
+      VALUES
+      (@Title
+      ,@Content
+      ,@Author
+      ,@Status
+      ,@CreateTime
+      ,GetDate()
+      );
+      SELECT Scope_Identity();
+    </Statement>
+
+    <!--删除-->
+    <Statement Id="Delete">
+      DELETE T_Article WHERE Id = @Id
+    </Statement>
+
+    <!--更新-->
+    <Statement Id="Update">
+      UPDATE T_Article
+      <Set>
+        ModifiedTime = GetDate()
+        <IsProperty Prepend="," Property="Title">
+          Title = @Title
+        </IsProperty>
+        <IsProperty Prepend="," Property="Content">
+          Content = @Content
+        </IsProperty>
+        <IsProperty Prepend="," Property="Author">
+          Author = @Author
+        </IsProperty>
+        <IsProperty Prepend="," Property="Status">
+          Status = @Status
+        </IsProperty>
+        <IsProperty Prepend="," Property="CreateTime">
+          CreateTime = @CreateTime
+        </IsProperty>
+      </Set>
+      Where id=@Id
+    </Statement>
+
+    <!--获取数据列-->
+    <Statement Id="Query">
+      SELECT T.* FROM T_Article T
+      <Include RefId="QueryParams" />
+      <Switch Prepend="Order By" Property="OrderBy">
+        <Default>
+          T.id Desc
+        </Default>
+      </Switch>
+      <IsNotEmpty Prepend="Limit" Property="Taken">@Taken</IsNotEmpty>
+    </Statement>
+
+    <!--获取分页数据-->
+    <Statement Id="QueryByPage">
+      SELECT T.* FROM T_Article As T
+      <Include RefId="QueryParams" />
+      <Switch Prepend="Order By" Property="OrderBy">
+        <Default>
+          T.Id Desc
+        </Default>
+      </Switch>
+      Offset ((@PageIndex-1)*@PageSize) Rows Fetch Next @PageSize Rows Only;
+    </Statement>
+
+    <!--获取记录数-->
+    <Statement Id="GetRecord">
+      SELECT Count(1) FROM T_Article T
+      <Include RefId="QueryParams" />
+    </Statement>
+
+    <!--获取表映射实体-->
+    <Statement Id="GetEntity">
+      SELECT TOP 1 T.* FROM T_Article As T
+      <Where Min="1">
+        <IsNotEmpty Prepend="And" Property="Id">
+          T.Id = @Id
+        </IsNotEmpty>
+      </Where>
+    </Statement>
+
+    <!--是否存在该记录-->
+    <Statement Id="IsExist">
+      SELECT Count(1) FROM T_Article T
+      <Include RefId="QueryParams" />
+    </Statement>
+
+
+  </Statements>
+</SmartSqlMap>
