@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.IO;
+using SmartSql.ConfigBuilder;
 using SmartSqlSampleChapterOne.DataAccess;
 
 namespace SmartSqlSampleChapterOne
@@ -31,7 +32,11 @@ namespace SmartSqlSampleChapterOne
             });
 
             // register smartsql
-            services.AddSmartSql(builder => { builder.UseAlias("SmartSqlSampleChapterOne"); });
+            services.AddSmartSql(builder =>
+            {
+                builder.UseAlias("SmartSqlSampleChapterOne");       // 定义实例别名，在多库场景下适用。
+                //.UseXmlConfig(ResourceType.File,"MyConfig.xml");
+            });
 
             // register data access
             services.AddSingleton<ArticleDataAccess>();
