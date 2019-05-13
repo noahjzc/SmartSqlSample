@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SmartSql.DyRepository" Version="4.0.45" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartSqlSampleChapterTwo.Entity\SmartSqlSampleChapterTwo.Entity.csproj" />
+  </ItemGroup>
+
+</Project>

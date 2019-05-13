@@ -19,7 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapter-7", "chapter-7", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapter-8", "chapter-8", "{5153BFD8-BFBA-4F58-9989-A32306D0C743}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSqlSampleChapterOne", "chapter-1\source\SmartSqlSampleChapterOne\SmartSqlSampleChapterOne.csproj", "{394DAA36-47E1-408B-A332-DF6CF8618FFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartSqlSampleChapterOne", "chapter-1\source\SmartSqlSampleChapterOne\SmartSqlSampleChapterOne.csproj", "{394DAA36-47E1-408B-A332-DF6CF8618FFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSqlSampleChapterTwo.Api", "chapter-2\SmartSqlSampleChapterTwo.Api\SmartSqlSampleChapterTwo.Api.csproj", "{F9F5DFC0-0BD0-4793-AD97-288219D54D96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSqlSampleChapterTwo.Entity", "chapter-2\SmartSqlSampleChapterTwo.Entity\SmartSqlSampleChapterTwo.Entity.csproj", "{A9619D2E-961B-460B-8064-DB21CA44B4F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSqlSampleChapterTwo.Repository", "chapter-2\SmartSqlSampleChapterTwo.Repository\SmartSqlSampleChapterTwo.Repository.csproj", "{727D3FCF-26F5-4FB8-9218-A388D4D440FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,12 +37,27 @@ Global
 		{394DAA36-47E1-408B-A332-DF6CF8618FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{394DAA36-47E1-408B-A332-DF6CF8618FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{394DAA36-47E1-408B-A332-DF6CF8618FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9F5DFC0-0BD0-4793-AD97-288219D54D96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F5DFC0-0BD0-4793-AD97-288219D54D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F5DFC0-0BD0-4793-AD97-288219D54D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9F5DFC0-0BD0-4793-AD97-288219D54D96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9619D2E-961B-460B-8064-DB21CA44B4F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9619D2E-961B-460B-8064-DB21CA44B4F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9619D2E-961B-460B-8064-DB21CA44B4F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9619D2E-961B-460B-8064-DB21CA44B4F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{727D3FCF-26F5-4FB8-9218-A388D4D440FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727D3FCF-26F5-4FB8-9218-A388D4D440FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727D3FCF-26F5-4FB8-9218-A388D4D440FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{727D3FCF-26F5-4FB8-9218-A388D4D440FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{394DAA36-47E1-408B-A332-DF6CF8618FFA} = {9542CD5B-A95D-480B-8895-38424573589D}
+		{F9F5DFC0-0BD0-4793-AD97-288219D54D96} = {64B48805-8BD6-42F2-9F0B-689223A8F004}
+		{A9619D2E-961B-460B-8064-DB21CA44B4F9} = {64B48805-8BD6-42F2-9F0B-689223A8F004}
+		{727D3FCF-26F5-4FB8-9218-A388D4D440FD} = {64B48805-8BD6-42F2-9F0B-689223A8F004}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68EC28E1-6CEA-4398-BA10-5AA723E1C6A9}
