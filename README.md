@@ -1,6 +1,6 @@
 # SmartSqlSample
 
-## <a href="https://www.cnblogs.com/noahji/p/10846215.html">chapter 1. 初始SmartSql</a>
+## <a href="https://www.cnblogs.com/noahji/p/10846215.html" target="_blank">chapter 1. 初始SmartSql</a>
 ## chapter 2. 使用动态代理实现简单CURD
 
 ## chapter 3. SmartSql中的事务，及AOP的使用
