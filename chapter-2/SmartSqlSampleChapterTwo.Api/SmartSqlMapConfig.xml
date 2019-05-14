@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+//*******************************
+// Create By Noah.Ji
+// Date 2019-05-10
+// Github : https://github.com/noahjzc/SmartSqlSample
+//*******************************-->
+<SmartSqlMapConfig xmlns="http://SmartSql.net/schemas/SmartSqlMapConfig.xsd">
+  <!-- 允许使用缓存（以后章节细讲） -->
+  <Settings IsCacheEnabled="true" />
+  <!-- 属性、特性配置节点，这里只配置一个连接字符串 -->
+  <Properties>
+    <Property Name="ConnectionString" Value="Data Source=localhost;database=SmartSqlSample;uid=sa;pwd=123456" />
+    <Property Name="ReadOneConnectionString" Value="Data Source=123.123.123.123;database=SmartSqlSample;uid=sa;pwd=123456" />
+  </Properties>
+  <!-- 数据库配置 Start -->
+  <Database>
+    <DbProvider Name="SqlServer" />
+    <Write Name="Sample-Write" ConnectionString="${ConnectionString}" />
+    <!-- 多读节点配置 -->
+    <!--
+    <Read Name="Sample-Node-1" ConnectionString="${ReadOneConnectionString}" Weight="60"/>
+    <Read Name="Sample-Node-2" ConnectionString="Data Source=456.456.456.456;database=SmartSqlSample;uid=sa;pwd=123456" Weight="40"/>
+    -->
+  </Database>
+  <!-- 数据库配置 End -->
+  <!-- 数据Map配置 Start -->
+  <SmartSqlMaps>
+    <!-- 文件夹 -->
+    <SmartSqlMap Path="Maps" Type="Directory"></SmartSqlMap>
+
+    <!-- 文件夹及子集（递归获取文件夹下所有Map文件） -->
+    <!--<SmartSqlMap Path="Maps" Type="DirectoryWithAllSub"></SmartSqlMap>-->
+
+    <!-- 单个文件 -->
+    <!--<SmartSqlMap Path="Maps/T_Article.xml" Type="File"></SmartSqlMap>-->
+
+    <!-- 嵌入式资源 -->
+    <!--<SmartSqlMap Path="SmartSqlSampleChapterOne.Maps.T_Article.xml, SmartSqlSampleChapterOne" Type="Embedded"></SmartSqlMap>-->
+
+    <!-- http资源 -->
+    <!--<SmartSqlMap Type="Uri" Path="https://smartsql.net/Maps/T_Article.xml" />-->
+  </SmartSqlMaps>
+  <!-- 数据Map配置 End -->
+</SmartSqlMapConfig>

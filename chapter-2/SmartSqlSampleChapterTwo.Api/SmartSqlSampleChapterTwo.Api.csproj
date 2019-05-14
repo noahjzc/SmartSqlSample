@@ -16,4 +16,16 @@
     <ProjectReference Include="..\SmartSqlSampleChapterTwo.Repository\SmartSqlSampleChapterTwo.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Maps\T_Article.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SmartSqlMapConfig.Development.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SmartSqlMapConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
