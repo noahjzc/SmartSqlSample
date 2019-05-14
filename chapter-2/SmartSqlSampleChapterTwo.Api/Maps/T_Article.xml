@@ -7,7 +7,7 @@
 // Code Generate Github : https://github.com/Ahoo-Wang/SmartCode
 //*******************************-->
 
-<SmartSqlMap Scope="Article" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+<SmartSqlMap Scope="CustomScope" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
   <Statements>
     <Statement Id="QueryParams">
       <Where>
@@ -119,6 +119,8 @@
       <Include RefId="QueryParams" />
     </Statement>
 
-
+    <Statement Id="Offline">
+      Update T_Article Set Status = 0 Where Id = @Id
+    </Statement>
   </Statements>
 </SmartSqlMap>
