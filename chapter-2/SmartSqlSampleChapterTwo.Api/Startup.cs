@@ -38,6 +38,16 @@ namespace SmartSqlSampleChapterTwo.Api
             {
                 builder.UseAlias("SmartSqlSampleChapterTwo");       // 定义实例别名，在多库场景下适用。
                 //.UseXmlConfig(ResourceType.File,"MyConfig.xml");
+            }).AddRepositoryFromAssembly(options =>
+            {
+                // SmartSql实例的别名
+                options.SmartSqlAlias = "SmartSqlSampleChapterTwo";
+                // 仓储接口所在的程序集全称
+                options.AssemblyString = "SmartSqlSampleChapterTwo.Repository";
+                // 筛选器，根据接口的Type筛选需要的仓储
+                options.Filter = type => type.FullName.Contains("Sample");
+                // Scope模板，默认是"I{Scope}Repository"
+                options.ScopeTemplate = "I{Scope}Repository";
             });
 
 

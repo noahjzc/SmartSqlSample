@@ -9,9 +9,9 @@ namespace SmartSqlSampleChapterTwo.Repository
     public interface IArticleRepository : IRepository<T_Article, long>
     {
         [Statement(CommandType = CommandType.Text, Execute = ExecuteBehavior.ExecuteScalar, Id = "Offline")]
-        void OfflineArticle([Param("Id", FieldType = typeof(long))] long articleId);
+        int OfflineArticle([Param("Id", FieldType = typeof(long))] long articleId);
 
         [Statement(Sql = "Update T_Article Set Status = 1 Where Id = @Id")]
-        void OnlineArticle([Param("Id")] long article);
+        int OnlineArticle([Param("Id")] long articleId);
     }
 }

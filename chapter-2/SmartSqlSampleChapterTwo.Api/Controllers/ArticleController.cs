@@ -99,5 +99,27 @@ namespace SmartSqlSampleChapterTwo.Api.Controllers
                 Title = key
             });
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public int Offline([FromQuery] long id)
+        {
+            return _articleRepository.OfflineArticle(id);
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public int Online([FromQuery] long id)
+        {
+            return _articleRepository.OnlineArticle(id);
+        }
     }
 }
