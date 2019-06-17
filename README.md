@@ -4,7 +4,7 @@
 
 ## [chapter 2. 使用动态代理实现简单CURD](https://www.cnblogs.com/noahji/p/10877277.html)
 
-## chapter 3. SmartSql中的事务，及AOP的使用
+## [chapter 3. SmartSql中的事务，及AOP的使用](https://www.cnblogs.com/noahji/p/11040274.html)
 
 ## chapter 4. TypeHandler类型处理器使用讲解 And 如何自定义TypeHandler
 
