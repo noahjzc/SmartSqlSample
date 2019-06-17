@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SmartSqlSampleChapterThree.Entity\SmartSqlSampleChapterThree.Entity.csproj" />
+      <ProjectReference Include="..\SmartSqlSampleChapterThree.Repository\SmartSqlSampleChapterThree.Repository.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SmartSql.AOP" Version="4.0.63" />
+    </ItemGroup>
+
+</Project>
