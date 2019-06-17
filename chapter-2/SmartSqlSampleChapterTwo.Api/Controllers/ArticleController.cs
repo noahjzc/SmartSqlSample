@@ -107,12 +107,12 @@ namespace SmartSqlSampleChapterTwo.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         public int Offline([FromQuery] long id)
-        {
-            return _articleRepository.OfflineArticle(id);
-        }
-        
-        /// <summary>
-        /// 
+                    {
+                        return _articleRepository.OfflineArticle(id);
+                    }
+                    
+                    /// <summary>
+                    /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
