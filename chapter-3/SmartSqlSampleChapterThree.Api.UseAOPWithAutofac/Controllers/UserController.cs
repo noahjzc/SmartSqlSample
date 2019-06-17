@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using SmartSqlSampleChapterThree.DomainService;
 using SmartSqlSampleChapterThree.Entity;
 
-namespace SmartSqlSampleChapterThree.Api.Controllers
+namespace SmartSqlSampleChapterThree.Api.UseAOPWithAutofac.Controllers
 {
     [Route("[controller]/[action]")]
     public class UserController : Controller
