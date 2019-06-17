@@ -19,44 +19,6 @@ namespace SmartSqlSampleChapterThree.DomainService
             _userDetailRepository = userDetailRepository;
             _transaction = transaction;
         }
-
-        // use transaction on repository's sql mapper
-        // public User Register(string loginName, string password, string nickname)
-        // {
-        //     try
-        //     {
-        //         _userRepository.SqlMapper.BeginTransaction();
-        //
-        //         var user = new User
-        //         {
-        //             LoginName = loginName,
-        //             Password = password,
-        //             Status = 1,
-        //             CreateTime = DateTime.Now,
-        //             ModifiedTime = DateTime.Now
-        //         };
-        //
-        //         user.Id = _userRepository.Insert(user);
-        //
-        //         _userDetailRepository.Insert(new UserDetail
-        //         {
-        //             UserId = user.Id,
-        //             Nickname = nickname,
-        //             Avatar = DEFAULT_AVATAR,
-        //             Sex = null,
-        //             CreateTime = DateTime.Now,
-        //             ModifiedTime = DateTime.Now
-        //         });
-        //
-        //         _userRepository.SqlMapper.CommitTransaction();
-        //         return user;
-        //     }
-        //     catch
-        //     {
-        //         _userRepository.SqlMapper.RollbackTransaction();
-        //         throw;
-        //     }
-        // }
         
         public User Register(string loginName, string password, string nickname)
         {
@@ -90,6 +52,44 @@ namespace SmartSqlSampleChapterThree.DomainService
             catch
             {
                 _transaction.RollbackTransaction();
+                throw;
+            }
+        }
+        
+        // use transaction on repository's sql mapper
+        public User RegisterUseRepository(string loginName, string password, string nickname)
+        {
+            try
+            {
+                _userRepository.SqlMapper.BeginTransaction();
+        
+                var user = new User
+                {
+                    LoginName = loginName,
+                    Password = password,
+                    Status = 1,
+                    CreateTime = DateTime.Now,
+                    ModifiedTime = DateTime.Now
+                };
+        
+                user.Id = _userRepository.Insert(user);
+        
+                _userDetailRepository.Insert(new UserDetail
+                {
+                    UserId = user.Id,
+                    Nickname = nickname,
+                    Avatar = DEFAULT_AVATAR,
+                    Sex = null,
+                    CreateTime = DateTime.Now,
+                    ModifiedTime = DateTime.Now
+                });
+        
+                _userRepository.SqlMapper.CommitTransaction();
+                return user;
+            }
+            catch
+            {
+                _userRepository.SqlMapper.RollbackTransaction();
                 throw;
             }
         }
