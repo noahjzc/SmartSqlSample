@@ -6,7 +6,7 @@
 
 ## [chapter 3. SmartSql中的事务，及AOP的使用](https://www.cnblogs.com/noahji/p/11040274.html)
 
-## chapter 4. TypeHandler类型处理器使用讲解 And 如何自定义TypeHandler
+## [chapter 4. 多库配置与使用](https://www.cnblogs.com/noahji/p/11304169.html)
 
 ## chapter 5. 多返回类型的实现
 
