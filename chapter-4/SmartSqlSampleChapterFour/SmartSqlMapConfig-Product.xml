@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMapConfig xmlns="http://SmartSql.net/schemas/SmartSqlMapConfig.xsd">
+    <Settings />
+    <Properties>
+        <Property Name="ConnectionString" Value="Data Source=localhost;database=SmartSqlSample_Product;uid=sa;pwd=123456" />
+    </Properties>
+    <Database>
+        <DbProvider Name="SqlServer" />
+        <Write Name="cms" ConnectionString="${ConnectionString}" />
+    </Database>
+    <SmartSqlMaps>
+        <SmartSqlMap Path="Maps/Product" Type="Directory" />
+    </SmartSqlMaps>
+</SmartSqlMapConfig>

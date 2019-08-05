@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<SmartSqlMap Scope="CommonDictionary" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+    <Statements>
+
+        <!--新增-->
+        <Statement Id="Insert">
+            INSERT INTO T_CommonDictionary
+            ([Key]
+            ,Value
+            ,CreateTime
+            )
+            VALUES
+            (@Key
+            ,@Value
+            ,@CreateTime
+            );
+            SELECT Scope_Identity();
+        </Statement>
+
+        <!--更新-->
+        <Statement Id="Set">
+            UPDATE T_CommonDictionary
+            <Set>
+                <IsProperty Prepend="," Property="Value">
+                    Value = @Value
+                </IsProperty>
+            </Set>
+            Where [Key]=@Key
+        </Statement>
+
+        <!--获取数据列-->
+        <Statement Id="Get">
+            SELECT TOP 1 T.* FROM T_CommonDictionary T
+            WHERE T.[Key] = @Key
+        </Statement>
+    </Statements>
+</SmartSqlMap>

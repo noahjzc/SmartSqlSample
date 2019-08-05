@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<SmartSqlMap Scope="Product" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+    <Statements>
+        <Statement Id="QueryParams">
+            <Where>
+                <IsNotEmpty Prepend="And" Property="Name">
+                    T.Name LIKE Contact('%',@Name,'%')
+                </IsNotEmpty>
+                <IsNotEmpty Prepend="And" Property="Price">
+                    T.Price = @Price
+                </IsNotEmpty>
+            </Where>
+        </Statement>
+
+        <!--新增-->
+        <Statement Id="Insert">
+            INSERT INTO T_Product
+            (Name
+            ,Summary
+            ,Price
+            ,CreateTime
+            )
+            VALUES
+            (@Name
+            ,@Summary
+            ,@Price
+            ,@CreateTime
+            );
+            SELECT Scope_Identity();
+        </Statement>
+
+        <!--删除-->
+        <Statement Id="Delete">
+            DELETE T_Product WHERE Id = @Id
+        </Statement>
+
+        <!--更新-->
+        <Statement Id="Update">
+            UPDATE T_Product
+            <Set>
+                <IsProperty Prepend="," Property="Name">
+                    Name = @Name
+                </IsProperty>
+                <IsProperty Prepend="," Property="Summary">
+                    Summary = @Summary
+                </IsProperty>
+                <IsProperty Prepend="," Property="Price">
+                    Price = @Price
+                </IsProperty>
+            </Set>
+            Where id=@Id
+        </Statement>
+
+        <!--获取数据列-->
+        <Statement Id="Query">
+            SELECT T.* FROM T_Product T
+            <Include RefId="QueryParams"/>
+            <Switch Prepend="Order By" Property="OrderBy">
+                <Default>
+                    T.CreateTime Desc
+                </Default>
+            </Switch>
+            <IsNotEmpty Prepend="Limit" Property="Taken">@Taken</IsNotEmpty>
+        </Statement>
+
+        <!--获取分页数据-->
+        <Statement Id="QueryByPage">
+            SELECT T.* FROM T_Product As T
+            <Include RefId="QueryParams"/>
+            <Switch Prepend="Order By" Property="OrderBy">
+                <Default>
+                    T.CreateTime Desc
+                </Default>
+            </Switch>
+            Offset ((@PageIndex-1)*@PageSize) Rows Fetch Next @PageSize Rows Only;
+        </Statement>
+
+        <!--获取记录数-->
+        <Statement Id="GetRecord">
+            SELECT Count(1) FROM T_Product T
+            <Include RefId="QueryParams"/>
+        </Statement>
+
+        <!--获取表映射实体-->
+        <Statement Id="GetEntity">
+            SELECT TOP 1 T.* FROM T_Product As T
+            <Where Min="1">
+                <IsNotEmpty Prepend="And" Property="Id">
+                    T.Id = @Id
+                </IsNotEmpty>
+            </Where>
+        </Statement>
+
+        <!--是否存在该记录-->
+        <Statement Id="IsExist">
+            SELECT Count(1) FROM T_Product T
+            <Include RefId="QueryParams"/>
+        </Statement>
+    </Statements>
+</SmartSqlMap>
